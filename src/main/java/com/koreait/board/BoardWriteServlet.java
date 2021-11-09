@@ -27,6 +27,20 @@ public class BoardWriteServlet extends HttpServlet {
         System.out.println("title : " + title);
         System.out.println("ctnt : " + ctnt);
         System.out.println("writer : " + writer);
+        BoardVO param = new BoardVO();
+        param.setTitle(title);
+        param.setCtnt(ctnt);
+        param.setWriter(writer);
 
+        //0, 1
+        int result = BoardDAO.insBoard(param);
+        switch (result) {
+            case 1:
+                res.sendRedirect("/list"); //주소이동
+                break;
+            default:
+                res.sendRedirect("/write"); //주소이동
+                break;
+        }
     }
 }

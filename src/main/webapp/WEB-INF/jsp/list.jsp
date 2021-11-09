@@ -31,7 +31,11 @@
         <% for(BoardVO vo : list) { %>
         <tr>
             <td><%= vo.getIboard() %></td>
-            <td><%= vo.getTitle() %></td>
+            <td>
+                <a href="/detail?iboard=<%= vo.getIboard() %>">
+                    <%= vo.getTitle() %>
+                </a>
+            </td>
             <td><%= vo.getWriter() %></td>
             <td><%= vo.getRdt() %></td>
         </tr>
