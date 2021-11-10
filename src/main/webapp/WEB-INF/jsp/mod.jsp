@@ -1,12 +1,27 @@
+<%@ page import="com.koreait.board.BoardVO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+        BoardVO aaa = (BoardVO)request.getAttribute("bbb");
+%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>수정</title>
+    <title>글수정</title>
 </head>
 <body>
-    <input type="text" name="" value="가가가가">
+<h1>글수정</h1>
+<form action="/mod" method="post">
+    <div><input type="text" name="title" placeholder="제목" value="<%=aaa.getTitle()%>"></div>
+    <div>
+        <textarea name="ctnt" placeholder="내용"><%=aaa.getCtnt()%></textarea>
+    </div>
+    <div><input type="text" name="writer" placeholder="글쓴이" value="<%=aaa.getWriter()%>"></div>
+    <div>
+        <input type="submit" value="저장">
+        <input type="reset" value="초기화">
+    </div>
+</form>
 </body>
 </html>
