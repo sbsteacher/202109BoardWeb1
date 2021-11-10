@@ -15,6 +15,7 @@
     <div>
         <a href="/del?iboard=<%= aaa.getIboard() %>"><input type="button" value="삭제"></a>
         <a href="/mod?iboard=<%= aaa.getIboard() %>"><input type="button" value="수정"></a>
+        <a href="/list">리스트</a>
     </div>
     <div>제목 : <%= aaa.getTitle() %></div>
     <div>작성자 : <%= aaa.getWriter() %></div>

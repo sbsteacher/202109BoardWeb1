@@ -26,6 +26,23 @@ public class BoardModServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        String strIboard = req.getParameter("iboard");
+        int iboard = Integer.parseInt(strIboard);
+        String title = req.getParameter("title");
+        String ctnt = req.getParameter("ctnt");
+        String writer = req.getParameter("writer");
 
+        BoardVO param = new BoardVO();
+        param.setIboard(iboard);
+        param.setTitle(title);
+        param.setCtnt(ctnt);
+        param.setWriter(writer);
+
+        int result = BoardDAO.updBoard(param);
+        switch(result) {
+            case 1:
+                res.sendRedirect("/detail?iboard=" + strIboard);
+                break;
+        }
     }
 }

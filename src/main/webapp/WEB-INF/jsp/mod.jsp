@@ -13,6 +13,7 @@
 <body>
 <h1>글수정</h1>
 <form action="/mod" method="post">
+    <input type="hidden" name="iboard" value="<%=aaa.getIboard()%>">
     <div><input type="text" name="title" placeholder="제목" value="<%=aaa.getTitle()%>"></div>
     <div>
         <textarea name="ctnt" placeholder="내용"><%=aaa.getCtnt()%></textarea>
