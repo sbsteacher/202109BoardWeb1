@@ -3,6 +3,8 @@
 <%
     BoardVO aaa = (BoardVO)request.getAttribute("bbb");
     String strIboard = request.getParameter("iboard");
+    int prevIboard = (int)request.getAttribute("prevIboard");
+    int nextIboard = (int)request.getAttribute("nextIboard");
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -17,6 +19,16 @@
         <a href="/mod?iboard=<%= aaa.getIboard() %>"><input type="button" value="수정"></a>
         <a href="/list">리스트</a>
     </div>
+    <div>
+        <% if(prevIboard != 0) { %>
+            <a href="/detail?iboard=<%=prevIboard%>">이전글</a>
+        <% } %>
+
+        <% if(nextIboard != 0) { %>
+            <a href="/detail?iboard=<%=nextIboard%>">다음글</a>
+        <% } %>
+    </div>
+    <div>no : <%= aaa.getIboard() %></div>
     <div>제목 : <%= aaa.getTitle() %></div>
     <div>작성자 : <%= aaa.getWriter() %></div>
     <div>작성일시 : <%= aaa.getRdt() %></div>

@@ -10,6 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>리스트</title>
+    <link rel="stylesheet" href="/css/test.css">
     <style>
         table, td, th {
             border-collapse: collapse;
